@@ -5,10 +5,21 @@ using UnityEngine.Events;
 [Serializable]
 public class ReactiveVariable<T> 
 {
-	[SerializeField] private UnityEvent<T> _changed = new();
 	[SerializeField] private T _value;
 
-	public UnityEvent<T> Changed => _changed;
+	private event EventHandler<T> _changed;
+
+	public event EventHandler<T> Changed
+	{
+		add
+		{
+			_changed += value;
+		}
+		remove
+		{
+			_changed -= value;
+		}
+	}
 	public T Value
 	{
 		get
@@ -18,7 +29,7 @@ public class ReactiveVariable<T>
 		set
 		{
 			_value = value;
-			_changed.Invoke(_value);
+			_changed(this,_value);
 		}
 	}
 

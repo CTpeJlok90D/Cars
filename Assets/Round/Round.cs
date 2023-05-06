@@ -5,32 +5,47 @@ using UnityEngine;
 public class Round : MonoBehaviour
 {
 	[SerializeField] private List<TeamScore> _teams = new();
+	[SerializeField] private List<CarPositionInfo> _cars;
 	[SerializeField] private List<ObjectPositionInfo> _infos = new();
 
-	private void OnEnable()
+	protected void OnEnable()
 	{
 		foreach (TeamScore teamScore in _teams)
 		{
 			teamScore.Win.AddListener(OnWin);
-			teamScore.Changed.AddListener(OnGoal);
+			teamScore.Changed += OnGoal;
 		}
 	}
 
-	private void OnDisable()
+	protected void OnDisable()
 	{
 		foreach (TeamScore teamScore in _teams)
 		{
 			teamScore.Win.RemoveListener(OnWin);
-			teamScore.Changed.RemoveListener(OnGoal);
+			teamScore.Changed -= OnGoal;
+		}
+	}
+
+	protected void Start()
+	{
+		foreach (CarPositionInfo car in _cars)
+		{
+			_infos.Add(new ObjectPositionInfo()
+			{
+				Object = car.Controller.Car.transform,
+				Rigidbody = car.Controller.Car.Rigidbody,
+				Position = car.Position,
+				Rotation = car.Rotation
+			});
 		}
 	}
 
 	private void OnWin(TeamScore teamScore)
 	{
-		Debug.Log($"{teamScore.TeamName} won!");
+		Debug.Log($"{teamScore.TeamName} lose!");
 	}
 
-	private void OnGoal(int value)
+	private void OnGoal(object sender, int value)
 	{
 		RestartRound();
 	}
@@ -54,6 +69,14 @@ public class Round : MonoBehaviour
 	{
 		public Transform Object;
 		public Rigidbody Rigidbody;
+		public Vector3 Position;
+		public Quaternion Rotation;
+	}
+
+	[Serializable]
+	private class CarPositionInfo
+	{
+		public CarController Controller;
 		public Vector3 Position;
 		public Quaternion Rotation;
 	}

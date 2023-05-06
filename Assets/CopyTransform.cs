@@ -41,11 +41,17 @@ public class CopyTransform : MonoBehaviour
 
 	protected void Update()
     {
+        if (Target == null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
         Vector3 resultPosition = new Vector3();
         resultPosition.x = CopyPositionX ? Target.position.x : transform.position.x;
         resultPosition.y = CopyPositionY ? Target.position.y : transform.position.y;
         resultPosition.z = CopyPositionZ ? Target.position.z : transform.position.z;
-        transform.position = resultPosition + PositionOffset;
+        transform.position = resultPosition;
         Vector3 anglesResult = new();
         anglesResult.x = CopyRotateX ? Target.eulerAngles.x : transform.eulerAngles.x;
         anglesResult.y = CopyRotateY ? Target.eulerAngles.y : transform.eulerAngles.y;

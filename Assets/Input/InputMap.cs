@@ -62,6 +62,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Break"",
+                    ""type"": ""Button"",
+                    ""id"": ""64e0329b-aac9-48d0-957f-b87da0dc724d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""action"": ""CameraTargetChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11b366b2-0b07-4f66-ae00-7cf04ba9fe78"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Break"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         m_Car_Rotate = m_Car.FindAction("Rotate", throwIfNotFound: true);
         m_Car_Boost = m_Car.FindAction("Boost", throwIfNotFound: true);
         m_Car_CameraTargetChange = m_Car.FindAction("CameraTargetChange", throwIfNotFound: true);
+        m_Car_Break = m_Car.FindAction("Break", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Car_Rotate;
     private readonly InputAction m_Car_Boost;
     private readonly InputAction m_Car_CameraTargetChange;
+    private readonly InputAction m_Car_Break;
     public struct CarActions
     {
         private @InputMap m_Wrapper;
@@ -237,6 +259,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_Car_Rotate;
         public InputAction @Boost => m_Wrapper.m_Car_Boost;
         public InputAction @CameraTargetChange => m_Wrapper.m_Car_CameraTargetChange;
+        public InputAction @Break => m_Wrapper.m_Car_Break;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +281,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @CameraTargetChange.started += instance.OnCameraTargetChange;
             @CameraTargetChange.performed += instance.OnCameraTargetChange;
             @CameraTargetChange.canceled += instance.OnCameraTargetChange;
+            @Break.started += instance.OnBreak;
+            @Break.performed += instance.OnBreak;
+            @Break.canceled += instance.OnBreak;
         }
 
         private void UnregisterCallbacks(ICarActions instance)
@@ -274,6 +300,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @CameraTargetChange.started -= instance.OnCameraTargetChange;
             @CameraTargetChange.performed -= instance.OnCameraTargetChange;
             @CameraTargetChange.canceled -= instance.OnCameraTargetChange;
+            @Break.started -= instance.OnBreak;
+            @Break.performed -= instance.OnBreak;
+            @Break.canceled -= instance.OnBreak;
         }
 
         public void RemoveCallbacks(ICarActions instance)
@@ -297,5 +326,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
         void OnCameraTargetChange(InputAction.CallbackContext context);
+        void OnBreak(InputAction.CallbackContext context);
     }
 }

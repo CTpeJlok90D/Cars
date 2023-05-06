@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,17 @@ public class TeamScore : MonoBehaviour
 			_current.Value = value;
 		}
 	}
-	public UnityEvent<int> Changed => _current.Changed;
+	public event EventHandler<int> Changed
+	{
+		add
+		{
+			_current.Changed += value;
+		}
+		remove
+		{
+			_current.Changed -= value;
+		}
+	}
 	public UnityEvent<TeamScore> Win => _win;
 	public string TeamName => _teamName;
 }
