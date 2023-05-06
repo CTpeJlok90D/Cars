@@ -10,17 +10,17 @@ public class ScoreView : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_playerScore.Changed += OnScoreChange;
-		_botScore.Changed += OnScoreChange;
+		_playerScore.Changed.AddListener(OnScoreChange);
+		_botScore.Changed.AddListener(OnScoreChange);
 	}
 
 	private void OnDisable()
 	{
-		_playerScore.Changed -= OnScoreChange;
-		_botScore.Changed -= OnScoreChange;
+		_playerScore.Changed.RemoveListener(OnScoreChange);
+		_botScore.Changed.RemoveListener(OnScoreChange);
 	}
 
-	private void OnScoreChange(object sender, int value)
+	private void OnScoreChange(int value)
 	{
 		UpdateText();
 	}

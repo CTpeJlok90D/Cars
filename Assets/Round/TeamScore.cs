@@ -4,9 +4,7 @@ using UnityEngine.Events;
 
 public class TeamScore : MonoBehaviour
 {
-	[SerializeField] private int _requestScoreToWin = 3;
 	[SerializeField] private ReactiveVariable<int> _current = new(0);
-	[SerializeField] private UnityEvent<TeamScore> _win;
 	[SerializeField] private string _teamName;
 
 	public int Current
@@ -17,24 +15,9 @@ public class TeamScore : MonoBehaviour
 		}
 		set
 		{
-			if (value >= _requestScoreToWin)
-			{
-				_win.Invoke(this);
-			}
 			_current.Value = value;
 		}
 	}
-	public event EventHandler<int> Changed
-	{
-		add
-		{
-			_current.Changed += value;
-		}
-		remove
-		{
-			_current.Changed -= value;
-		}
-	}
-	public UnityEvent<TeamScore> Win => _win;
+	public UnityEvent<int> Changed => _current.Changed;
 	public string TeamName => _teamName;
 }

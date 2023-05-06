@@ -12,7 +12,7 @@ public class CarGarageColorChanger : MonoBehaviour
 	protected void OnEnable()
 	{
 		_carGarageChanger.CarChanged.AddListener(OnCurrentCarChange);
-		PlayerDataContainer.Instance.Data.UnlockedCars.Changed += UnlockedCarsOnChanged;
+		PlayerDataContainer.Instance.Data.UnlockedCars.Changed.AddListener(UnlockedCarsOnChanged);
 	}
 
 	protected void OnDisable()
@@ -20,7 +20,7 @@ public class CarGarageColorChanger : MonoBehaviour
 		_carGarageChanger.CarChanged.RemoveListener(OnCurrentCarChange);
 		if (PlayerDataContainer.HaveInstance)
 		{
-			PlayerDataContainer.Instance.Data.UnlockedCars.Changed -= UnlockedCarsOnChanged;
+			PlayerDataContainer.Instance.Data.UnlockedCars.Changed.RemoveListener(UnlockedCarsOnChanged);
 		}
 	}
 
@@ -29,7 +29,7 @@ public class CarGarageColorChanger : MonoBehaviour
 		OnCurrentCarChange(_carGarageChanger.CarShower.CurrentCarInstance, _carGarageChanger.CurrentCarData);
 	}
 
-	private void UnlockedCarsOnChanged(object sender, List<PlayerData.UnlockedStateCarInfo> e)
+	private void UnlockedCarsOnChanged(List<PlayerData.UnlockedStateCarInfo> e)
 	{
 		OnCurrentCarChange(_carGarageChanger.CarShower.CurrentCarInstance, _carGarageChanger.CurrentCarData);
 	}
@@ -48,5 +48,7 @@ public class CarGarageColorChanger : MonoBehaviour
 			Instantiate(_colorViewPrefab, _colorsButtonParent).Init(colorInfo.Color, _customizer, colorInfo.Price, data.name, i);
 			i++;
 		}
+		_customizer.Color = data.ColorPrices[0].Color;
+		PlayerDataContainer.Instance.CarColor = data.ColorPrices[0].Color;
 	}
 }

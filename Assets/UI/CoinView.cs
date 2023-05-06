@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,11 +9,19 @@ public class CoinView : MonoBehaviour
 
 	private void OnEnable()
 	{
-		PlayerData.Coins.Changed += OnCoinCountChanged;
-		OnCoinCountChanged(this, PlayerData.Coins.Value);
+		PlayerData.Coins.Changed.AddListener(OnCoinCountChanged);
+		_text.text = PlayerData.Coins.Value.ToString();
 	}
 
-	private void OnCoinCountChanged(object sender, int newValue)
+	private void OnDisable()
+	{
+		if (PlayerDataContainer.HaveInstance)
+		{
+			PlayerData.Coins.Changed.RemoveListener(OnCoinCountChanged);
+		}
+	}
+
+	private void OnCoinCountChanged(int newValue)
 	{
 		_text.text = newValue.ToString();
 	}

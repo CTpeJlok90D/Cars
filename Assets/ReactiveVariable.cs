@@ -7,19 +7,9 @@ public class ReactiveVariable<T>
 {
 	[SerializeField] private T _value;
 
-	private event EventHandler<T> _changed;
+	private UnityEvent<T> _changed = new();
 
-	public event EventHandler<T> Changed
-	{
-		add
-		{
-			_changed += value;
-		}
-		remove
-		{
-			_changed -= value;
-		}
-	}
+	public UnityEvent<T> Changed => _changed;
 	public T Value
 	{
 		get
@@ -29,7 +19,7 @@ public class ReactiveVariable<T>
 		set
 		{
 			_value = value;
-			_changed(this,_value);
+			_changed.Invoke(_value);
 		}
 	}
 

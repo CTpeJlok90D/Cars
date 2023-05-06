@@ -12,7 +12,10 @@ public class CarAI : CarController
 
 	private void Update()
     {
-		_movement.Move(_ball.transform.position);
+		if (_ball != null)
+		{
+			_movement.Move(_ball.transform.position);
+		}
 		//if (Vector3.Distance(_ownGates.transform.position, _ball.transform.position) > Vector3.Distance(_ownGates.transform.position, _enemyGates.transform.position) / 3)
 		//{
 		//	_hitBall.Execute();

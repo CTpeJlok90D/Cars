@@ -44,6 +44,10 @@ public class CarGarageChanger : MonoBehaviour
 	protected void Awake()
 	{
 		_cars = Resources.LoadAll<CarData>("Cars");
+	}
+
+	private void Start()
+	{
 		CurrentCarIndex = _currentCarIndex;
 	}
 
@@ -52,7 +56,7 @@ public class CarGarageChanger : MonoBehaviour
 		_nextCarButton?.onClick.AddListener(NextCar);
 		_previousCarButton?.onClick.AddListener(PreviewCar);
 
-		PlayerData.UnlockedCars.Changed += UnlockedCarsOnChanged;
+		PlayerData.UnlockedCars.Changed.AddListener(UnlockedCarsOnChanged);
 	}
 
 	protected void OnDisable()
@@ -62,7 +66,7 @@ public class CarGarageChanger : MonoBehaviour
 
 		if (PlayerDataContainer.HaveInstance)
 		{
-			PlayerData.UnlockedCars.Changed -= UnlockedCarsOnChanged;
+			PlayerData.UnlockedCars.Changed.RemoveListener(UnlockedCarsOnChanged);
 		}
 	}
 
@@ -76,7 +80,7 @@ public class CarGarageChanger : MonoBehaviour
 		CurrentCarIndex++;
 	}
 
-	private void UnlockedCarsOnChanged(object sender, List<PlayerData.UnlockedStateCarInfo> newCarInfo)
+	private void UnlockedCarsOnChanged(List<PlayerData.UnlockedStateCarInfo> newCarInfo)
 	{
 		CurrentCarIndex = _currentCarIndex;
 	}
