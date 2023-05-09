@@ -41,5 +41,5 @@ MonoBehaviour:
   _break: 150
   _nitro: 200
   _isUnlocked: 0
-  _byRealMoney: 1
-  _price: 200
+  _byRealMoney: 0
+  _price: 4000

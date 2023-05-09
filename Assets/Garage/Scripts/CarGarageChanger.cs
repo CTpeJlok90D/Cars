@@ -45,6 +45,27 @@ public class CarGarageChanger : MonoBehaviour
 	protected void Awake()
 	{
 		_cars = Resources.LoadAll<CarData>("Cars").ToList();
+		SortCars();
+	}
+
+	private void SortCars()
+	{
+		List<CarData> newArray = new(_cars);
+		_cars.Clear();
+
+		while (newArray.Count > 0)
+		{
+			int minElementIndex = 0;
+			for (int i = 0; i < newArray.Count; i++)
+			{
+				if (newArray[i].Price < newArray[minElementIndex].Price)
+				{
+					minElementIndex = i;
+				}
+			}
+			_cars.Add(newArray[minElementIndex]);
+			newArray.RemoveAt(minElementIndex);
+		}
 	}
 
 	private void Start()

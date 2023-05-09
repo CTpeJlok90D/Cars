@@ -1184,6 +1184,7 @@ MonoBehaviour:
   _nitroSlider: {fileID: 0}
   _breakSlider: {fileID: 0}
   _disablePhysics: 1
+  _disableSound: 1
   _carWheelRotate: 0.8
 --- !u!4 &1104053080
 Transform:
@@ -1925,6 +1926,7 @@ MonoBehaviour:
   _nitroSlider: {fileID: 0}
   _breakSlider: {fileID: 0}
   _disablePhysics: 1
+  _disableSound: 1
   _carWheelRotate: 0.8
 --- !u!4 &1745651389
 Transform:
@@ -2769,10 +2771,10 @@ RectTransform:
   m_Father: {fileID: 1041215346}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1697.168, y: -143.8617}
-  m_SizeDelta: {x: 305.836, y: 74.2234}
+  m_AnchorMin: {x: 0.80352086, y: 0.83100003}
+  m_AnchorMax: {x: 0.9635209, y: 0.90044457}
+  m_AnchoredPosition: {x: 0.66796875, y: 0.63830566}
+  m_SizeDelta: {x: -1.1640625, y: -0.7766113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145851211
 MonoBehaviour:
