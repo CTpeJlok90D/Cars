@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8190323330519822916}
   - component: {fileID: 9223303438002279926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 9034316436248888280}
   - component: {fileID: 754783634612517431}
   - component: {fileID: 2296003456933435204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1429008281505862035}
   - component: {fileID: 1468519531436703255}
   - component: {fileID: 5785140361150772343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5016715699910465293}
   - component: {fileID: 5367762553829100451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3147321039911502246}
   - component: {fileID: 6706754423864638271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 1359610365043773601}
   - component: {fileID: 1397224223155036621}
   - component: {fileID: 7233022019281825012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1346148835575101802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheel colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,6 +525,153 @@ Transform:
   m_Father: {fileID: 6437683708634515434}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3434592459380546100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6488875450078761078}
+  - component: {fileID: 6780983782669342815}
+  - component: {fileID: 856116154289461553}
+  m_Layer: 6
+  m_Name: Sounds (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6488875450078761078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434592459380546100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6437683708634515434}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6780983782669342815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434592459380546100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bc34675efb1ea4585f348a19d04865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 3041954073182280046}
+  _normalSpeed: 60
+  _defualtPitch: 0.3
+  _maxPitch: 1.2
+  _minPitch: 0.5
+  _aidioSource: {fileID: 856116154289461553}
+--- !u!82 &856116154289461553
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434592459380546100}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 22cd46996da3b624bb08935264560d8c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 30
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3820820580531856860
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1162535713746586354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheel meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +721,7 @@ GameObject:
   - component: {fileID: 9020277125945568463}
   - component: {fileID: 6302555604980659758}
   - component: {fileID: 3327926229956253069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,6 +744,7 @@ Transform:
   - {fileID: 9034316436248888280}
   - {fileID: 1162535713746586354}
   - {fileID: 1346148835575101802}
+  - {fileID: 6488875450078761078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -641,14 +789,18 @@ MonoBehaviour:
     _motor: 1
     _steering: 0
   _maxMotorTorque: 600
-  _boostPower: 100
-  _boostMaxMotorTorque: 1300
   _maxStreeringAngle: 40
   _streeringAnglePerSecondMultyply: 5
   _handbrakePower: 0.95
+  _startBoostFuelRequest: 15
+  _boostPower: 100
+  _boostMaxMotorTorque: 1300
   _boostFuel: 0
   _maxBoostFuel: 150
   _boostFuelExpenditurePerSecond: 50
+  _boostAmoutChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _customizer: {fileID: 9020277125945568463}
 --- !u!114 &9020277125945568463
 MonoBehaviour:
@@ -664,13 +816,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _car: {fileID: 2296003456933435204}
   _materialIndex: 6
-  _colors:
-  - {r: 0.83137256, g: 0.09803922, b: 0.09803922, a: 1}
-  - {r: 0.83137256, g: 0.704431, b: 0.0980392, a: 1}
-  - {r: 0.36157012, g: 0.83137256, b: 0.0980392, a: 1}
-  - {r: 0.0980392, g: 0.83137256, b: 0.5522944, a: 1}
-  - {r: 0.0980392, g: 0.3453225, b: 0.83137256, a: 1}
-  - {r: 0.83137256, g: 0.0980392, b: 0.80204135, a: 1}
   _colorChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -698,7 +843,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &3327926229956253069
@@ -734,7 +879,7 @@ GameObject:
   - component: {fileID: 4883386920855096933}
   - component: {fileID: 4115233306760629628}
   - component: {fileID: 8979247015819189075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8988448743024196688}
   - component: {fileID: 1357621617791386315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +1034,7 @@ GameObject:
   - component: {fileID: 312032471948754934}
   - component: {fileID: 680913679752154553}
   - component: {fileID: 8897089019632219499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +1118,7 @@ GameObject:
   - component: {fileID: 557778041987134480}
   - component: {fileID: 3810092463708857607}
   - component: {fileID: 3292413539437701705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zegato_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

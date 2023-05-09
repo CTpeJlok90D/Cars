@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Burst;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SimpleCar : MonoBehaviour
@@ -11,14 +12,16 @@ public class SimpleCar : MonoBehaviour
 	[SerializeField] private Rigidbody _rigidbody;
 	[SerializeField] private List<AxleInfo> _axleInfos;
 	[SerializeField] private float _maxMotorTorque = 400;
+	[SerializeField] private float _maxStreeringAngle = 30;
+	[SerializeField] private float _streeringAnglePerSecondMultyply = 5;
+	[SerializeField] private float _handbrakePower = 0.8f;
+	[Header("Boost")]
+	[SerializeField] private float _startBoostFuelRequest = 15f;
 	[SerializeField] private float _boostPower = 100;
 	[SerializeField] private float _boostMaxMotorTorque = 800;
-	[SerializeField] private float _maxStreeringAngle = 30;
-	[SerializeField] private float _streeringAnglePerSecondMultyply = 1;
-	[SerializeField] private float _handbrakePower = 0.8f;
 	[SerializeField] private float _boostFuel = 0;
 	[SerializeField] private float _maxBoostFuel = 100;
-	[SerializeField] private float _boostFuelExpenditurePerSecond = 33;
+	[SerializeField] private float _boostFuelExpenditurePerSecond = 50;
 	[SerializeField] private UnityEvent<float, float> _boostAmoutChanged = new();
 
 	[SerializeField] private CarCustomizer _customizer;
@@ -33,6 +36,8 @@ public class SimpleCar : MonoBehaviour
 	private bool _handbrake = false;
 	private bool _boosting = false;
 
+	public bool Disabled = false;
+
 	private Coroutine _boostCoroutine;
 
 	public CarCustomizer Customizer => _customizer;
@@ -43,6 +48,7 @@ public class SimpleCar : MonoBehaviour
 	public UnityEvent StoppedBoost => _stoppedBoost;
 	public UnityEvent<float, float> BoostAmoutChanged => _boostAmoutChanged;
 	public bool Boosting => _boosting;
+	public float Speed => _rigidbody.velocity.magnitude * 3.6f;
 
 	public float BoostFuel
 	{
@@ -54,6 +60,11 @@ public class SimpleCar : MonoBehaviour
 		{
 			_boostFuel = Mathf.Clamp(value, 0, _maxBoostFuel);
 			BoostAmoutChanged.Invoke(_boostFuel, _maxBoostFuel);
+
+			if (_boostFuel == 0)
+			{
+				StopBoost();
+			}
 		}
 	}
 
@@ -78,10 +89,11 @@ public class SimpleCar : MonoBehaviour
 
 	public void Boost()
 	{
-		if (_boosting == true)
+		if (_boosting == true || _boostFuel < _startBoostFuelRequest)
 		{
 			return;
 		}
+		_boostFuel -= _startBoostFuelRequest;
 		_rigidbody.AddForce(_rigidbody.transform.forward * _rigidbody.mass * _boostPower);
 		_boosting = true;
 		_boostCoroutine = StartCoroutine(BoostCorutine());
@@ -101,7 +113,7 @@ public class SimpleCar : MonoBehaviour
 			BoostFuel -= _boostFuelExpenditurePerSecond * Time.deltaTime;
 			yield return null;
 		}
-		_stoppedBoost.Invoke();
+		StopBoost();
 	}
 	public void Break()
 	{
@@ -110,13 +122,37 @@ public class SimpleCar : MonoBehaviour
 
 	protected void FixedUpdate()
 	{
+		if (Disabled)
+		{
+			StopCar();
+		}
 		if (_handbrake && _axleInfos[0].LeftWheel.isGrounded)
 		{
 			_rigidbody.velocity = _rigidbody.velocity * _handbrakePower;
+			foreach (AxleInfo axleInfo in _axleInfos)
+			{
+				if (axleInfo.Motor)
+				{
+					axleInfo.LeftWheel.rotationSpeed = 0;
+					axleInfo.RightWheel.rotationSpeed = 0;
+				}
+			}
 			return;
 		}
 		UpdateSteeringInput();
 		ApplyInputs();
+	}
+
+	private void StopCar()
+	{
+		_currentMotoringInput = 0;
+		_currentStringInput = 0;
+
+		foreach (AxleInfo axleInfo in _axleInfos)
+		{
+			axleInfo.LeftWheel.rotationSpeed = 0;
+			axleInfo.RightWheel.rotationSpeed = 0;
+		}
 	}
 
 	private void ApplyInputs()
@@ -173,6 +209,7 @@ public class SimpleCar : MonoBehaviour
 		public bool Motor => _motor;
 	}
 
+#if UNITY_EDITOR
 	private void OnDrawGizmosSelected()
 	{
 		Vector3 moveDirection = transform.position + transform.TransformDirection(new Vector3(0,0,_currentMotoringInput));
@@ -183,4 +220,5 @@ public class SimpleCar : MonoBehaviour
 		Gizmos.color = Color.cyan;
 		Gizmos.DrawLine(transform.position,  streengDirection);
 	}
+#endif
 }

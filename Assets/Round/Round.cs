@@ -1,6 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using System.Timers;
 using UnityEngine;
 
 public class Round : MonoBehaviour
@@ -9,21 +10,26 @@ public class Round : MonoBehaviour
 	[SerializeField] private List<CarPositionInfo> _cars;
 	[SerializeField] private List<ObjectPositionInfo> _infos = new();
 	[SerializeField] private float _timeBetweenRounds = 2.5f;
+	[SerializeField] private float _preRoundTime = 5f;
 	[SerializeField] private float _gameTime = 180f;
 	[SerializeField] private ResultWindow _resultWindow;
 	[SerializeField] private GameObject _inGameCanvas;
 	[SerializeField] private Ball _ball;
 	[Header("Coints reward")]
-	[SerializeField] private int _winCoinReward = 30;
-	[SerializeField] private int _loseCoinReward = 15;
-	[SerializeField] private int _drawCoinReward = 20;
+	[SerializeField] private int _winCoinReward = 500;
+	[SerializeField] private int _coinRewardPerGoal = 50;
+	[SerializeField] private int _loseCoinReward = 100;
+	[SerializeField] private int _drawCoinReward = 250;
 	[Header("Raiting reward")]
-	[SerializeField] private int _winRaitingReward = 100;
-	[SerializeField] private int _loseRaitingReward = -10;
-	[SerializeField] private int _drawRaitingReward = 50;
+	[SerializeField] private int _winMaxRaitingReward = 30;
+	[SerializeField] private int _winMinRaitingReward = 35;
+	[SerializeField] private int _loseMaxRaitingReward = -10;
+	[SerializeField] private int _loseMinRaitingReward = -15;
+	[SerializeField] private int _drawRaitingReward = 10;
 
 	private bool _timeIsTicking = true;
 	private PlayerData PlayerData => PlayerDataContainer.Instance.Data;
+	public float GameTime => _gameTime;
 
 	protected void OnEnable()
 	{
@@ -53,6 +59,9 @@ public class Round : MonoBehaviour
 				Rotation = car.Rotation
 			});
 		}
+
+		DisableAllCars();
+		StartCoroutine(PreRound());
 	}
 
 	private void Update()
@@ -75,6 +84,7 @@ public class Round : MonoBehaviour
 
 	public void EndGame()
 	{
+		DisableAllCars();
 		Destroy(_ball);
 
 		_timeIsTicking = false;
@@ -96,28 +106,81 @@ public class Round : MonoBehaviour
 
 	public void Draw()
 	{
-		PlayerData.Coins.Value += _drawCoinReward;
+        PlayerData.Coins.Value += _drawCoinReward;
 		PlayerData.Raiting.Value += _drawRaitingReward;
+
 		_resultWindow.ShowResults(Result.Draw, _drawCoinReward, _drawRaitingReward);
 	}
 
 	public void Win() 
 	{
-		PlayerData.Coins.Value += _winCoinReward;
-		PlayerData.Raiting.Value += _winRaitingReward;
-		_resultWindow.ShowResults(Result.Win, _winCoinReward, _winRaitingReward);
+		int coinReward = _winCoinReward + _coinRewardPerGoal * _teams[0].Current;
+		int raitingReward = UnityEngine.Random.Range(_winMinRaitingReward, _winMaxRaitingReward + 1);
+
+		PlayerData.Coins.Value += coinReward;
+		PlayerData.Raiting.Value += raitingReward;
+		_resultWindow.ShowResults(Result.Win, coinReward, raitingReward);
 	}
 
 	public void Lose()
 	{
-		PlayerData.Coins.Value += _loseCoinReward;
-		PlayerData.Raiting.Value += _loseRaitingReward;
-		_resultWindow.ShowResults(Result.Lose, _loseCoinReward, _loseRaitingReward);
+		int coinReward = _loseCoinReward;
+		int raitingReward = UnityEngine.Random.Range(_loseMinRaitingReward, _loseMaxRaitingReward + 1);
+
+		PlayerData.Coins.Value += coinReward;
+		PlayerData.Raiting.Value += raitingReward;
+		_resultWindow.ShowResults(Result.Lose, coinReward, raitingReward);
 	}
 
 	private void OnGoal(int value)
 	{
+		StartCoroutine(AfterGoalCoroutine());
+	}
+
+	private IEnumerator AfterGoalCoroutine()
+	{
+		_ball.enabled = false;
+		_timeIsTicking = false;
+
+		DisableAllCars();
+
+		float timer = _timeBetweenRounds;
+		while (timer > 0)
+		{
+			yield return null;
+			timer -= Time.deltaTime;
+		}
+
+		_ball.enabled = true;
+		_timeIsTicking = true;
 		RestartRound();
+	}
+
+	private void DisableAllCars()
+	{
+		foreach (CarPositionInfo car in _cars)
+		{
+			car.Controller.Car.Disabled = true;
+		}
+	}
+
+	private IEnumerator PreRound()
+	{
+		_timeIsTicking = false;
+		float time = _preRoundTime;
+
+		while (time > 0)
+		{
+			time -= Time.deltaTime;
+			yield return null;
+		}
+
+		foreach (CarPositionInfo car in _cars)
+		{
+			car.Controller.Car.Disabled = false;
+		}
+
+		_timeIsTicking = true;
 	}
 
 	public void RestartRound()
@@ -132,6 +195,7 @@ public class Round : MonoBehaviour
 				info.Rigidbody.angularVelocity = Vector3.zero;
 			}
 		}
+		StartCoroutine(PreRound());
 	}
 
 	[Serializable]

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1142206003b9b4f43837254bf0f7a631, type: 3}
+  m_Name: Thunder
+  m_EditorClassIdentifier: 
+  _viewName: Thunder
+  _viewPrefab: {fileID: 2825445850548857966, guid: 9027ea18dfc1771468adbb92f60e9398,
+    type: 3}
+  _colorPrices:
+  - Color: {r: 0.6698113, g: 0, b: 0, a: 1}
+    Price: 0
+    ByAdvertisement: 0
+  - Color: {r: 0.67058825, g: 0.4526373, b: 0, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0.67058825, g: 0.6265127, b: 0, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0.11937156, g: 0.67058825, b: 0, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0, g: 0.67058825, b: 0.6641499, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0, g: 0.12811145, b: 0.67058825, a: 1}
+    Price: 100
+    ByAdvertisement: 1
+  - Color: {r: 0.67058825, g: 0, b: 0.64965314, a: 1}
+    Price: 100
+    ByAdvertisement: 1
+  _speed: 150
+  _break: 20
+  _nitro: 160
+  _isUnlocked: 0
+  _byRealMoney: 0
+  _price: 200

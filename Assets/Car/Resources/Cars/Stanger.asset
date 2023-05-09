@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1142206003b9b4f43837254bf0f7a631, type: 3}
+  m_Name: Stanger
+  m_EditorClassIdentifier: 
+  _viewName: Stranger
+  _viewPrefab: {fileID: 4775106672024330341, guid: 71764620f25e49744913c96509cbbe04,
+    type: 3}
+  _colorPrices:
+  - Color: {r: 0.83137256, g: 0.09803922, b: 0.09803922, a: 1}
+    Price: 0
+    ByAdvertisement: 0
+  - Color: {r: 0.83137256, g: 0.5912506, b: 0.0980392, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0.75148845, g: 0.83137256, b: 0.0980392, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0.19618842, g: 0.83137256, b: 0.0980392, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0.0980392, g: 0.83137256, b: 0.7543058, a: 1}
+    Price: 100
+    ByAdvertisement: 0
+  - Color: {r: 0.0980392, g: 0.15564384, b: 0.83137256, a: 1}
+    Price: 100
+    ByAdvertisement: 1
+  - Color: {r: 0.83137256, g: 0.0980392, b: 0.72056824, a: 1}
+    Price: 100
+    ByAdvertisement: 1
+  _speed: 130
+  _break: 20
+  _nitro: 200
+  _isUnlocked: 0
+  _byRealMoney: 0
+  _price: 200

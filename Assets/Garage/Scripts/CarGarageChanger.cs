@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class CarGarageChanger : MonoBehaviour
 	[SerializeField] private Button _selectButton;
 	[SerializeField] private GameObject _lockObject;
 	[SerializeField] private UnityEvent<SimpleCar, CarData> _carChanged;
-	[SerializeField] private CarData[] _cars;
+	[SerializeField] private List<CarData> _cars;
 
 	private int _currentCarIndex = 0;
 	public CarData CurrentCarData => _cars[CurrentCarIndex];
@@ -27,15 +28,15 @@ public class CarGarageChanger : MonoBehaviour
 		}
 		set
 		{
-			_currentCarIndex = Mathf.Clamp(value, 0, _cars.Length - 1);
+			_currentCarIndex = Mathf.Clamp(value, 0, _cars.Count - 1);
 			_carGarageShower.CurrentCarData = CurrentCarData;
 			PlayerDataContainer.Instance.CurrentCar = CurrentCarData;
 
-			_selectButton.interactable = CurrentCarData.IsUnlocked;
+			_selectButton.enabled = CurrentCarData.IsUnlocked;
 			_lockObject.SetActive(CurrentCarData.IsUnlocked == false);
 
 			_previousCarButton.interactable = _currentCarIndex != 0;
-			_nextCarButton.interactable = _currentCarIndex != _cars.Length - 1;
+			_nextCarButton.interactable = _currentCarIndex != _cars.Count - 1;
 
 			_carChanged.Invoke(_carGarageShower.CurrentCarInstance, CurrentCarData);
 		}
@@ -43,7 +44,7 @@ public class CarGarageChanger : MonoBehaviour
 
 	protected void Awake()
 	{
-		_cars = Resources.LoadAll<CarData>("Cars");
+		_cars = Resources.LoadAll<CarData>("Cars").ToList();
 	}
 
 	private void Start()
@@ -56,7 +57,7 @@ public class CarGarageChanger : MonoBehaviour
 		_nextCarButton?.onClick.AddListener(NextCar);
 		_previousCarButton?.onClick.AddListener(PreviewCar);
 
-		PlayerData.UnlockedCars.Changed.AddListener(UnlockedCarsOnChanged);
+		PlayerData.UnlockedCarsChanged.AddListener(UnlockedCarsOnChanged);
 	}
 
 	protected void OnDisable()
@@ -66,7 +67,7 @@ public class CarGarageChanger : MonoBehaviour
 
 		if (PlayerDataContainer.HaveInstance)
 		{
-			PlayerData.UnlockedCars.Changed.RemoveListener(UnlockedCarsOnChanged);
+			PlayerData.UnlockedCarsChanged.RemoveListener(UnlockedCarsOnChanged);
 		}
 	}
 

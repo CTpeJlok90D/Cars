@@ -15,6 +15,8 @@ public class CarData : ScriptableObject
 	[Range(0, 200)]
 	[SerializeField] private float _nitro;
 	[SerializeField] private bool _isUnlocked;
+	[Header("Price")]
+	[SerializeField] private bool _byRealMoney;
 	[SerializeField] private int _price;
 
 	public string ViewName => _viewName;
@@ -23,6 +25,7 @@ public class CarData : ScriptableObject
 	public float Speed => _speed;
 	public float Break => _break;
 	public float Nitro => _nitro;
+	public bool ByRealMoney => _byRealMoney;
 	public bool IsUnlocked
 	{
 		get
@@ -38,5 +41,6 @@ public class CarData : ScriptableObject
 	{
 		public Color Color;
 		public int Price;
+		public bool ByAdvertisement;
 	}
 }

@@ -11,8 +11,17 @@ public class ResultWindow : MonoBehaviour
 	[SerializeField] private float _coinAnimationSpeed = 10f;
 	[SerializeField] private float _raitingAnimationSpeed = 25f;
 
+	private Round.Result _result;
+	private int _raitingReward;
+
+	public Round.Result Result => _result;
+	public int RaitingReward => _raitingReward;
+
 	public void ShowResults(Round.Result result, int coinsReward, int raitingReward)
 	{
+		_result = result;
+		_raitingReward = raitingReward;
+
 		_winObject.SetActive(result == Round.Result.Win);
 		_loseObject.SetActive(result == Round.Result.Lose);
 		_drawObject.SetActive(result == Round.Result.Draw);

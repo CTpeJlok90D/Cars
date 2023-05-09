@@ -1,0 +1,56 @@
+{
+    "name": "Cartests",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "99aa0e80-50e6-48d4-9a98-821653c977bf",
+            "actions": [
+                {
+                    "name": "Change",
+                    "type": "Value",
+                    "id": "603773f4-af46-469f-af14-bd018d855566",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "AD",
+                    "id": "544a544b-133a-4f16-a041-d88ef88f60fc",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "bee4f3b7-a00f-4db2-9ae9-b50cb84820ec",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "708a9b52-7856-40ed-b7a5-b4f7cf6486d8",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

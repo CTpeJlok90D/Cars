@@ -4,20 +4,16 @@ using UnityEngine;
 public class ScoreView : MonoBehaviour
 {
 	[SerializeField] private TMP_Text _text;
-	[SerializeField] private TeamScore _playerScore;
-	[SerializeField] private TeamScore _botScore;
-	[SerializeField] private string _space = "  ";
+	[SerializeField] private TeamScore _teamScore;
 
 	private void OnEnable()
 	{
-		_playerScore.Changed.AddListener(OnScoreChange);
-		_botScore.Changed.AddListener(OnScoreChange);
+		_teamScore.Changed.AddListener(OnScoreChange);
 	}
 
 	private void OnDisable()
 	{
-		_playerScore.Changed.RemoveListener(OnScoreChange);
-		_botScore.Changed.RemoveListener(OnScoreChange);
+		_teamScore.Changed.RemoveListener(OnScoreChange);
 	}
 
 	private void OnScoreChange(int value)
@@ -27,11 +23,6 @@ public class ScoreView : MonoBehaviour
 
 	public void UpdateText()
 	{
-		_text.text = $"{_playerScore.Current} {_space} {_botScore.Current}";
-	}
-
-	private void OnValidate()
-	{
-		_text.text = $"{_playerScore.Current} {_space} {_botScore.Current}";
+		_text.text = $"{_teamScore.Current}";
 	}
 }

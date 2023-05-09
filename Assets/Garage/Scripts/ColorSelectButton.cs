@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,36 +6,43 @@ public class ColorSelectButton : MonoBehaviour
 {
 	[SerializeField] private Button _selectButton;
 	[SerializeField] private Button _unlockButton;
+	[SerializeField] private Button _advertisementButton;
 	[SerializeField] private Image _image;
 	[SerializeField] private GameObject _lock;
 	[SerializeField] private TMP_Text _priceCaption;
 
 	private CarCustomizer _cutomizer;
 
-	private string _carName;
+
 	private int _carColorID;
-	private int _price;
+	private CarData _carData;
+	private CarData.ColorInfo _colorInfo;
 
 	public PlayerData PlayerData => PlayerDataContainer.Instance.Data;
 
-	public ColorSelectButton Init(Color color, CarCustomizer customizer, int price, string carName, int carColorId)
+	public ColorSelectButton Init(CarData carData, CarData.ColorInfo colorInfo, CarCustomizer customizer, int carColorId)
 	{
-		_image.color = color;
-		_cutomizer = customizer;
+		_carData = carData;
+		_colorInfo = colorInfo;
 
-		_price = price;
-		_carName = carName;
+		_image.color = colorInfo.Color;
+		_cutomizer = customizer;
 		_carColorID = carColorId;
 
-		PlayerData.UnlockedStateCarInfo info = PlayerData.CarInfoByName(_carName);
+		PlayerData.UnlockedStateCarInfo info = PlayerData.CarInfoByName(carData.name);
 
 		bool colorIsUnlocked = info != null && info.UnlockedColors.Contains(_carColorID);
+		bool carIsunlocked = info != null;
 
-		_unlockButton.interactable = info != null;
-		_lock.gameObject.SetActive(colorIsUnlocked == false);
-		_priceCaption.gameObject.SetActive(colorIsUnlocked == false);
+		_advertisementButton.gameObject.SetActive(colorIsUnlocked == false && colorInfo.ByAdvertisement);
+		_advertisementButton.interactable = carIsunlocked;
+		_unlockButton.gameObject.SetActive(colorInfo.ByAdvertisement == false);
+
+		_unlockButton.interactable = carIsunlocked;
+		_lock.gameObject.SetActive(colorIsUnlocked == false && colorInfo.ByAdvertisement == false);
+		_priceCaption.gameObject.SetActive(colorIsUnlocked == false && colorInfo.ByAdvertisement == false);
 		_selectButton.interactable = colorIsUnlocked;
-		_priceCaption.text = price.ToString() + "$";
+		_priceCaption.text = colorInfo.Price.ToString() + "$";
 
 		return this;
 	}
@@ -44,29 +50,35 @@ public class ColorSelectButton : MonoBehaviour
 	private void OnEnable()
 	{
 		_selectButton.onClick.AddListener(CustomizerApplyColor);
+		_advertisementButton.onClick.AddListener(UnlockFree);
 		_unlockButton.onClick.AddListener(UnlockColor);
 	}
 
 	private void OnDisable()
 	{
 		_selectButton.onClick.RemoveListener(CustomizerApplyColor);
+		_advertisementButton.onClick.RemoveListener(UnlockFree);
 		_unlockButton.onClick.RemoveListener(UnlockColor);
 	}
 
 	private void UnlockColor()
 	{
-		if (PlayerData.Coins.Value < _price)
+		if (PlayerData.Coins.Value < _colorInfo.Price)
 		{
 			return;
 		}
 
-		PlayerData.UnlockedStateCarInfo info = PlayerData.CarInfoByName(_carName);
-		info.UnlockedColors.Add(_carColorID);
-		PlayerData.Coins.Value -= _price;
+		UnlockFree();
+		PlayerData.UnlockedStateCarInfo info = PlayerData.CarInfoByName(_carData.name);
+		PlayerData.AddUnlockedCar(_carData, new() { _carColorID });
+		PlayerData.Coins.Value -= _colorInfo.Price;
+	}
 
-		// Знаю, глупо. Но мне нужно было вызвать event о том, что значение изменилось. А для этого нужно изменить value
-		// TODO: по возможности убрать костыль
-		PlayerData.UnlockedCars.Value = PlayerData.UnlockedCars.Value;
+	private void UnlockFree()
+	{
+		Debug.Log("Тут могла бы бить ваша реклама");
+		PlayerData.UnlockedStateCarInfo info = PlayerData.CarInfoByName(_carData.name);
+		PlayerData.AddUnlockedCar(_carData, new() { _carColorID });
 	}
 
 	private void CustomizerApplyColor()

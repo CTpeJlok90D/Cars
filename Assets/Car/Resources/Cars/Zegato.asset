@@ -18,20 +18,28 @@ MonoBehaviour:
   _colorPrices:
   - Color: {r: 0.83137256, g: 0.09803922, b: 0.09803922, a: 1}
     Price: 0
+    ByAdvertisement: 0
   - Color: {r: 0.83137256, g: 0.5912506, b: 0.0980392, a: 1}
     Price: 100
+    ByAdvertisement: 0
   - Color: {r: 0.75148845, g: 0.83137256, b: 0.0980392, a: 1}
     Price: 100
+    ByAdvertisement: 0
   - Color: {r: 0.19618842, g: 0.83137256, b: 0.0980392, a: 1}
     Price: 100
+    ByAdvertisement: 0
   - Color: {r: 0.0980392, g: 0.83137256, b: 0.7543058, a: 1}
     Price: 100
+    ByAdvertisement: 0
   - Color: {r: 0.0980392, g: 0.15564384, b: 0.83137256, a: 1}
     Price: 100
+    ByAdvertisement: 1
   - Color: {r: 0.83137256, g: 0.0980392, b: 0.72056824, a: 1}
     Price: 100
+    ByAdvertisement: 1
   _speed: 70
   _break: 90
   _nitro: 120
   _isUnlocked: 0
+  _byRealMoney: 1
   _price: 200

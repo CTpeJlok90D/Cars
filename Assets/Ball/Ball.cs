@@ -1,9 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 public class Ball : MonoBehaviour
 {
 	[SerializeField] private float _punchForce;
 	[SerializeField] private Rigidbody _rigidbody;
-
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.GetComponent<SimpleCar>())
