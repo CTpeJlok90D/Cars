@@ -10,6 +10,7 @@ public class CarShower : MonoBehaviour
 	[SerializeField] private Slider _nitroSlider;
 	[SerializeField] private Slider _breakSlider;
 	[SerializeField] private bool _disablePhysics = true;
+	[SerializeField] private bool _disableSound = true;
 	[Range(-1,1)]
 	[SerializeField] private float _carWheelRotate = 0;
 	
@@ -41,6 +42,7 @@ public class CarShower : MonoBehaviour
 				if (_speedSlider != null) _speedSlider.value = value.Speed;
 				if (_nitroSlider != null) _nitroSlider.value = value.Nitro;
 				if (_breakSlider != null) _breakSlider.value = value.Break;
+				_currentCarInstance.AudioSource.enabled = _disableSound == false;
 			}
 		}
 	}

@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 4962954310959267073}
+  _source: {fileID: 5028691239999238051}
   _axleInfos:
   - _leftWheel: {fileID: 8518105194413768445}
     _leftWheelView: {fileID: 1515332805359481384}
@@ -682,6 +683,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _customizer: {fileID: 41185613717692415}
+  Disabled: 0
 --- !u!114 &41185613717692415
 MonoBehaviour:
   m_ObjectHideFlags: 0

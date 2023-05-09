@@ -775,6 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6302555604980659758}
+  _source: {fileID: 856116154289461553}
   _axleInfos:
   - _leftWheel: {fileID: 1357621617791386315}
     _leftWheelView: {fileID: 4883386920855096933}
@@ -793,7 +794,7 @@ MonoBehaviour:
   _streeringAnglePerSecondMultyply: 5
   _handbrakePower: 0.95
   _startBoostFuelRequest: 15
-  _boostPower: 100
+  _boostPower: 300
   _boostMaxMotorTorque: 1300
   _boostFuel: 0
   _maxBoostFuel: 150
@@ -802,6 +803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _customizer: {fileID: 9020277125945568463}
+  Disabled: 0
 --- !u!114 &9020277125945568463
 MonoBehaviour:
   m_ObjectHideFlags: 0

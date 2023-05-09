@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
 public class Round : MonoBehaviour
@@ -9,12 +8,13 @@ public class Round : MonoBehaviour
 	[SerializeField] private List<TeamScore> _teams = new();
 	[SerializeField] private List<CarPositionInfo> _cars;
 	[SerializeField] private List<ObjectPositionInfo> _infos = new();
-	[SerializeField] private float _timeBetweenRounds = 2.5f;
-	[SerializeField] private float _preRoundTime = 5f;
+	[SerializeField] private float _timeAfterRound = 2.5f;
+	[SerializeField] private float _preRoundTime = 3.9f;
 	[SerializeField] private float _gameTime = 180f;
 	[SerializeField] private ResultWindow _resultWindow;
 	[SerializeField] private GameObject _inGameCanvas;
 	[SerializeField] private Ball _ball;
+	[SerializeField] private ÑountdownTimer _timer;
 	[Header("Coints reward")]
 	[SerializeField] private int _winCoinReward = 500;
 	[SerializeField] private int _coinRewardPerGoal = 50;
@@ -60,6 +60,8 @@ public class Round : MonoBehaviour
 			});
 		}
 
+		Cursor.visible = false;
+
 		DisableAllCars();
 		StartCoroutine(PreRound());
 	}
@@ -102,6 +104,8 @@ public class Round : MonoBehaviour
 		{
 			Lose();
 		}
+
+		Cursor.visible = true;
 	}
 
 	public void Draw()
@@ -144,7 +148,7 @@ public class Round : MonoBehaviour
 
 		DisableAllCars();
 
-		float timer = _timeBetweenRounds;
+		float timer = _timeAfterRound;
 		while (timer > 0)
 		{
 			yield return null;
@@ -166,6 +170,7 @@ public class Round : MonoBehaviour
 
 	private IEnumerator PreRound()
 	{
+		_timer.StartCooldown(_preRoundTime);
 		_timeIsTicking = false;
 		float time = _preRoundTime;
 

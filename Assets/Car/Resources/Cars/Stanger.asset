@@ -37,8 +37,8 @@ MonoBehaviour:
   - Color: {r: 0.83137256, g: 0.0980392, b: 0.72056824, a: 1}
     Price: 100
     ByAdvertisement: 1
-  _speed: 130
-  _break: 20
+  _speed: 170
+  _break: 10
   _nitro: 200
   _isUnlocked: 0
   _byRealMoney: 0

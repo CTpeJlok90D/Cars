@@ -55,15 +55,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CameraTargetChange"",
-                    ""type"": ""Button"",
-                    ""id"": ""eed17cc0-ed14-4580-ba42-4b8992939f94"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Break"",
                     ""type"": ""Button"",
                     ""id"": ""64e0329b-aac9-48d0-957f-b87da0dc724d"",
@@ -108,6 +99,17 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""628a52b5-6c8e-44a7-9983-254cad869e19"",
+                    ""path"": ""<Gamepad>/leftStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Gas"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""AD"",
                     ""id"": ""4bf98a78-4587-4854-8f70-4bca0e4f8a5a"",
                     ""path"": ""1DAxis"",
@@ -142,23 +144,23 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""df7f5578-a238-4a38-a5f7-e7a48397e6a2"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""5772cad7-4788-4a14-a29f-6530a6990518"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Boost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""97bdb782-f795-4cf5-b94b-bb71dbe6661c"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraTargetChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -183,7 +185,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         m_Car_Gas = m_Car.FindAction("Gas", throwIfNotFound: true);
         m_Car_Rotate = m_Car.FindAction("Rotate", throwIfNotFound: true);
         m_Car_Boost = m_Car.FindAction("Boost", throwIfNotFound: true);
-        m_Car_CameraTargetChange = m_Car.FindAction("CameraTargetChange", throwIfNotFound: true);
         m_Car_Break = m_Car.FindAction("Break", throwIfNotFound: true);
     }
 
@@ -249,7 +250,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Car_Gas;
     private readonly InputAction m_Car_Rotate;
     private readonly InputAction m_Car_Boost;
-    private readonly InputAction m_Car_CameraTargetChange;
     private readonly InputAction m_Car_Break;
     public struct CarActions
     {
@@ -258,7 +258,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         public InputAction @Gas => m_Wrapper.m_Car_Gas;
         public InputAction @Rotate => m_Wrapper.m_Car_Rotate;
         public InputAction @Boost => m_Wrapper.m_Car_Boost;
-        public InputAction @CameraTargetChange => m_Wrapper.m_Car_CameraTargetChange;
         public InputAction @Break => m_Wrapper.m_Car_Break;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
         public void Enable() { Get().Enable(); }
@@ -278,9 +277,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @Boost.started += instance.OnBoost;
             @Boost.performed += instance.OnBoost;
             @Boost.canceled += instance.OnBoost;
-            @CameraTargetChange.started += instance.OnCameraTargetChange;
-            @CameraTargetChange.performed += instance.OnCameraTargetChange;
-            @CameraTargetChange.canceled += instance.OnCameraTargetChange;
             @Break.started += instance.OnBreak;
             @Break.performed += instance.OnBreak;
             @Break.canceled += instance.OnBreak;
@@ -297,9 +293,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @Boost.started -= instance.OnBoost;
             @Boost.performed -= instance.OnBoost;
             @Boost.canceled -= instance.OnBoost;
-            @CameraTargetChange.started -= instance.OnCameraTargetChange;
-            @CameraTargetChange.performed -= instance.OnCameraTargetChange;
-            @CameraTargetChange.canceled -= instance.OnCameraTargetChange;
             @Break.started -= instance.OnBreak;
             @Break.performed -= instance.OnBreak;
             @Break.canceled -= instance.OnBreak;
@@ -325,7 +318,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         void OnGas(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
-        void OnCameraTargetChange(InputAction.CallbackContext context);
         void OnBreak(InputAction.CallbackContext context);
     }
 }

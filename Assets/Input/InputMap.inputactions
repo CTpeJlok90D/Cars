@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CameraTargetChange",
-                    "type": "Button",
-                    "id": "eed17cc0-ed14-4580-ba42-4b8992939f94",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Break",
                     "type": "Button",
                     "id": "64e0329b-aac9-48d0-957f-b87da0dc724d",
@@ -86,6 +77,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "",
+                    "id": "628a52b5-6c8e-44a7-9983-254cad869e19",
+                    "path": "<Gamepad>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "AD",
                     "id": "4bf98a78-4587-4854-8f70-4bca0e4f8a5a",
                     "path": "1DAxis",
@@ -120,23 +122,23 @@
                 },
                 {
                     "name": "",
+                    "id": "df7f5578-a238-4a38-a5f7-e7a48397e6a2",
+                    "path": "<Gamepad>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5772cad7-4788-4a14-a29f-6530a6990518",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Boost",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "97bdb782-f795-4cf5-b94b-bb71dbe6661c",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraTargetChange",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

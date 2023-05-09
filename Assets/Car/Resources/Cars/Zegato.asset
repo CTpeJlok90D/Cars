@@ -38,8 +38,8 @@ MonoBehaviour:
     Price: 100
     ByAdvertisement: 1
   _speed: 70
-  _break: 90
-  _nitro: 120
+  _break: 150
+  _nitro: 200
   _isUnlocked: 0
   _byRealMoney: 1
   _price: 200

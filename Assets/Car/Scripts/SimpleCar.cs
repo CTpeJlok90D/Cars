@@ -1,15 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SimpleCar : MonoBehaviour
 {
 	[SerializeField] private Rigidbody _rigidbody;
+	[SerializeField] private AudioSource _source;
 	[SerializeField] private List<AxleInfo> _axleInfos;
 	[SerializeField] private float _maxMotorTorque = 400;
 	[SerializeField] private float _maxStreeringAngle = 30;
@@ -49,6 +48,7 @@ public class SimpleCar : MonoBehaviour
 	public UnityEvent<float, float> BoostAmoutChanged => _boostAmoutChanged;
 	public bool Boosting => _boosting;
 	public float Speed => _rigidbody.velocity.magnitude * 3.6f;
+	public AudioSource AudioSource => _source;
 
 	public float BoostFuel
 	{
@@ -118,6 +118,11 @@ public class SimpleCar : MonoBehaviour
 	public void Break()
 	{
 		_handbrake = true;
+	}
+
+	public void StopBreak()
+	{
+		_handbrake = false;
 	}
 
 	protected void FixedUpdate()
