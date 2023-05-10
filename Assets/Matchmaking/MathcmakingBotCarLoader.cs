@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,9 @@ public class MathcmakingBotCarLoader : MonoBehaviour
 	[SerializeField] private float _delayRangeMaxValue = 1;
 	[SerializeField] private float _startDelay = 1.5f;
 	[SerializeField] private int _matchSceneNumber;
+	[SerializeField] private CarData _weakCar;
+	[SerializeField] private int _winRequestWinCar = 2;
+	[SerializeField] private int _winRequestStrongCar = 25;
 
 	public UnityEvent OpponentFound => _opponentFounded;
 
@@ -36,8 +40,15 @@ public class MathcmakingBotCarLoader : MonoBehaviour
 	private void LoadApponent()
 	{
 		CarData[] cars = Resources.LoadAll<CarData>("Cars");
-
+		if (PlayerDataContainer.Instance.Data.WinCount > _winRequestStrongCar)
+		{
+			cars.AddRange(Resources.LoadAll<CarData>("DonateCars"));
+		}
 		BotCarDataContainer.Instance.CurrentCar = cars[Random.Range(0, cars.Length)];
+		if (PlayerDataContainer.Instance.Data.WinCount < _winRequestWinCar)
+		{
+			BotCarDataContainer.Instance.CurrentCar = _weakCar;
+		}
 		_carShower.CurrentCarData = BotCarDataContainer.Instance.CurrentCar;
 		BotCarDataContainer.Instance.CarColor = _carShower.CurrentCarData.ColorPrices[Random.Range(0, _carShower.CurrentCarData.ColorPrices.Count)].Color;
 		_carShower.CarCusomizer.Color = BotCarDataContainer.Instance.CarColor;

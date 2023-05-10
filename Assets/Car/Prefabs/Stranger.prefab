@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1015098572781459759}
   - component: {fileID: 7598157812313789341}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 4319399965194817712}
   - component: {fileID: 7237148603190367140}
   - component: {fileID: 836731584550595413}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4756050754115825846}
   - component: {fileID: 8735656899187684760}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 4896573329071250404}
   - component: {fileID: 3382506751430328343}
   - component: {fileID: 4629835318046595783}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 6658603615281468605}
   - component: {fileID: 2198474663978453531}
   - component: {fileID: 5733338676493508087}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5509028534360157505}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Whells colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 3959592039596633058}
   - component: {fileID: 9055201423698738895}
   - component: {fileID: 7305620682985486111}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1515332805359481384}
   - component: {fileID: 4593039943272129242}
   - component: {fileID: 8173648438688695866}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 115017451462021227}
   - component: {fileID: 4913018140782716317}
   - component: {fileID: 4962954310959267073}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3839138817411772349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 6158366267795181741}
   - component: {fileID: 7634686525127556438}
   - component: {fileID: 7910319381973369156}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7988722919573767530}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Whells meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2821139645086731122}
   - component: {fileID: 8518105194413768445}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +985,7 @@ GameObject:
   - component: {fileID: 9130522816489472779}
   - component: {fileID: 8042417233640621148}
   - component: {fileID: 5028691239999238051}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6831504823631353412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1037,7 +1037,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c224246aabdf2147b24b920563d9f85, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1131,7 +1131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1899126410072783628}
   - component: {fileID: 1675310977690550435}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Stranger_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

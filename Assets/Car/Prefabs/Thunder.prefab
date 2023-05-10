@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310589130859222905}
   - component: {fileID: 3986011440321664293}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 1154066846063343907}
   - component: {fileID: 5317248003390611019}
   - component: {fileID: 4526166389635995531}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 1495468428143148239}
   - component: {fileID: 4786574969948959003}
   - component: {fileID: 881888686979125296}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 8846915640379636887}
   - component: {fileID: 6257481513131115192}
   - component: {fileID: 6067705565048476273}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2338096687164220794}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WheelsColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 8511561062944473117}
   - component: {fileID: 7723102722099198878}
   - component: {fileID: 7119710769973291267}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 4063062793775699358}
   - component: {fileID: 4819891994697560776}
   - component: {fileID: 1241962197009505162}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6170279097515997547}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WheelsMeshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3347529848486981029}
   - component: {fileID: 8048739764408133265}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 5382997482214003895}
   - component: {fileID: 5101453305988263338}
   - component: {fileID: 4969125162443945742}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6388005228318180454}
   - component: {fileID: 339705032205397942}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444382929410147949}
   - component: {fileID: 4408429665123432455}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 1119395768186164341}
   - component: {fileID: 7635022368156680572}
   - component: {fileID: 5411728235612232789}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6769830138415601135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 284.29553, y: -0.00002336502, z: 13.624319}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 2179706000221143460}
   - component: {fileID: 6595942916004891959}
   - component: {fileID: 4872536321709208846}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845670911119476997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: -0.004374504, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1110,7 +1110,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f42ee6c61e2b5a049b588a485b2f267f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4663748490661863569}
   - component: {fileID: 6137577368772174643}
   - component: {fileID: 5481995094705394785}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1442716300347220050}
   - component: {fileID: 5592557044253509014}
   - component: {fileID: 638101504155238668}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6166923465039067138}
   - component: {fileID: 2712373057868427849}
   - component: {fileID: 1048881344362068954}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3999095458643238665}
   - component: {fileID: 6149715503218825275}
   - component: {fileID: 4151616733127228457}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965225882773681126}
   - component: {fileID: 7129372475084277576}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 1022439433513578136}
   - component: {fileID: 6883468041488963457}
   - component: {fileID: 3214267403957559974}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4512961584796648730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3199533553656569020}
   - component: {fileID: 2566004422789098343}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7345041558903049532}
   - component: {fileID: 3846025693525926718}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8393337293594204113}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheels meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 2088667915780432403}
   - component: {fileID: 1183918167536385325}
   - component: {fileID: 334134329357002331}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,8 +777,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7176698544367195882}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -815,7 +815,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c0191f5eddde47443a5bfd777e6d37b6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -908,7 +908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7674750782833785706}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheels colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 1810875979494718888}
   - component: {fileID: 2689896206426978704}
   - component: {fileID: 798909598549075093}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,7 +1030,7 @@ GameObject:
   - component: {fileID: 6566927107433760877}
   - component: {fileID: 6017509277024020379}
   - component: {fileID: 5475041689158013620}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5260563638954642139}
   - component: {fileID: 438645356172002379}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Diesel_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

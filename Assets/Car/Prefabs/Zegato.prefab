@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8190323330519822916}
   - component: {fileID: 9223303438002279926}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 9034316436248888280}
   - component: {fileID: 754783634612517431}
   - component: {fileID: 2296003456933435204}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1429008281505862035}
   - component: {fileID: 1468519531436703255}
   - component: {fileID: 5785140361150772343}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5016715699910465293}
   - component: {fileID: 5367762553829100451}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3147321039911502246}
   - component: {fileID: 6706754423864638271}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 1359610365043773601}
   - component: {fileID: 1397224223155036621}
   - component: {fileID: 7233022019281825012}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1346148835575101802}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheel colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 6488875450078761078}
   - component: {fileID: 6780983782669342815}
   - component: {fileID: 856116154289461553}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sounds (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3434592459380546100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -588,7 +588,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 22cd46996da3b624bb08935264560d8c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -681,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1162535713746586354}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheel meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 9020277125945568463}
   - component: {fileID: 6302555604980659758}
   - component: {fileID: 3327926229956253069}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 4883386920855096933}
   - component: {fileID: 4115233306760629628}
   - component: {fileID: 8979247015819189075}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8988448743024196688}
   - component: {fileID: 1357621617791386315}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 312032471948754934}
   - component: {fileID: 680913679752154553}
   - component: {fileID: 8897089019632219499}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 557778041987134480}
   - component: {fileID: 3810092463708857607}
   - component: {fileID: 3292413539437701705}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zegato_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

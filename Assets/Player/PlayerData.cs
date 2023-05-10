@@ -8,41 +8,43 @@ public class PlayerData
 {
 	public ReactiveVariable<int> Coins = new(0);
 	public ReactiveVariable<int> Raiting = new(1000);
-	[SerializeField] private ReactiveVariable<List<UnlockedStateCarInfo>> _unlockedCars = new(new() 
+	public int WinCount = 0;
+	[SerializeField] private List<UnlockedStateCarInfo> _unlockedCars = new() 
 	{
 		new UnlockedStateCarInfo()
 		{
 			Name = "Caravan",
 			UnlockedColors = new(){0}
 		}
-	});
+	};
+	private UnityEvent<List<UnlockedStateCarInfo>> _unlockedCardsChanged = new();
 
-	public UnityEvent<List<UnlockedStateCarInfo>> UnlockedCarsChanged => _unlockedCars.Changed;
+	public UnityEvent<List<UnlockedStateCarInfo>> UnlockedCarsChanged => _unlockedCardsChanged;
 
 	public void AddUnlockedCar(CarData car, List<int> colors)
 	{
-		foreach (var carInfo in _unlockedCars.Value)
+		foreach (var carInfo in _unlockedCars)
 		{
 			if (carInfo.Name == car.name)
 			{
 				carInfo.UnlockedColors.AddRange(colors);
-				_unlockedCars.Changed.Invoke(_unlockedCars.Value);
+				_unlockedCardsChanged.Invoke(_unlockedCars);
 				return;
 			}
 		}
 
-		_unlockedCars.Value.Add(new()
+		_unlockedCars.Add(new()
 		{
 			Name = car.name, 
 			UnlockedColors = colors
 		});
 
-		_unlockedCars.Changed.Invoke(_unlockedCars.Value);
+		_unlockedCardsChanged.Invoke(_unlockedCars);
 	}
 
 	public UnlockedStateCarInfo CarInfoByName(string name)
 	{
-		foreach (UnlockedStateCarInfo item in _unlockedCars.Value)
+		foreach (UnlockedStateCarInfo item in _unlockedCars)
 		{
 			if (item.Name == name)
 			{

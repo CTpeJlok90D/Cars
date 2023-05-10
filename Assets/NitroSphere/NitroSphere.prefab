@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2080474147902618434}
   - component: {fileID: 481086690438207187}
   - component: {fileID: 8694368374654675028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NitroRechargeView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3752612508428996774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NitroSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3801286924470567031}
   - component: {fileID: 5299676357599934790}
   - component: {fileID: 5876297762794093163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Nitro sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

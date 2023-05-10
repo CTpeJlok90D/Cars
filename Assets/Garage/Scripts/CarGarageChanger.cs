@@ -46,6 +46,7 @@ public class CarGarageChanger : MonoBehaviour
 	{
 		_cars = Resources.LoadAll<CarData>("Cars").ToList();
 		SortCars();
+		_cars.AddRange(Resources.LoadAll<CarData>("DonateCars"));
 	}
 
 	private void SortCars()

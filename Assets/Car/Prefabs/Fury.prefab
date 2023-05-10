@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3120191932807523745}
   - component: {fileID: 4422286600574075103}
   - component: {fileID: 1916728009330411951}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5564659086539505632}
   - component: {fileID: 1292560420470867480}
   - component: {fileID: 2937322171448358196}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,8 +110,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133040148851490972}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,7 +148,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aaddb94424c9c014a9e4b2df9ad95200, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 3691021815909349481}
   - component: {fileID: 5391324360018407231}
   - component: {fileID: 5590248978458816245}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 5913060907085163871}
   - component: {fileID: 5974726675690984104}
   - component: {fileID: 1651887366249884169}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36764357886695537}
   - component: {fileID: 7524879557242264120}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 146383670402195955}
   - component: {fileID: 6339477549188512540}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 1221213137610853760}
   - component: {fileID: 8644544562097510098}
   - component: {fileID: 5571296323992686955}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2698220287125266371}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheel meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 1294230848467676339}
   - component: {fileID: 4647272479185789743}
   - component: {fileID: 2001552565653037956}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheelbrake_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 168889638625260812}
   - component: {fileID: 4546476033284875624}
   - component: {fileID: 8304544687326921310}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3886103367405033741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 140, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -925,7 +925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4197777494540776614}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheel colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: 5399424348881106430}
   - component: {fileID: 8684416592114804902}
   - component: {fileID: 3673837933275412044}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheelbrake_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752168410785131409}
   - component: {fileID: 7031160621298873467}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 6293689356273227471}
   - component: {fileID: 8338573312864059432}
   - component: {fileID: 7200221152890629335}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8329165621512118290}
   - component: {fileID: 1313475178837026069}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 3812955433547975101}
   - component: {fileID: 1416593698875147226}
   - component: {fileID: 7000163244747298311}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 7422324062514957744}
   - component: {fileID: 6296669446854208067}
   - component: {fileID: 8305894380864054945}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheelbrake_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 4706824568326417392}
   - component: {fileID: 156625074894921664}
   - component: {fileID: 3850174891687876822}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fury_Wheelbrake_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

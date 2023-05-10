@@ -12,6 +12,10 @@ public class MobileInput : MonoBehaviour
 		_breakButton.Down.AddListener(_controller.Car.Break);
 		_nitroButton.Up.AddListener(_controller.Car.StopBoost);
 		_breakButton.Up.AddListener(_controller.Car.StopBreak);
+		if (SystemInfo.deviceType != DeviceType.Handheld)
+		{
+			gameObject.SetActive(false);
+		}
 	}
 
 	private void OnDisable()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6407071673863965881}
   - component: {fileID: 4429505752070340635}
   - component: {fileID: 5123087180129855436}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CarShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 5904197552873083728}
   - component: {fileID: 5172177161817027300}
   - component: {fileID: 7930641539553793763}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1296920073305248869}
   - component: {fileID: 7127126717183914598}
   - component: {fileID: 7426745370973460440}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheelbrake_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7178897911935633010}
   - component: {fileID: 2984353132981332174}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 2027296640391036694}
   - component: {fileID: 2148830035216782861}
   - component: {fileID: 8953309644377977713}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1697643676909478699}
   - component: {fileID: 3082937028573844481}
   - component: {fileID: 550460876438584426}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheelbrake_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027331669039272803}
   - component: {fileID: 2278562161927009548}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 8306175984856206046}
   - component: {fileID: 350145145666922383}
   - component: {fileID: 4851892667856470431}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3695717091589893817}
   - component: {fileID: 588929568493645606}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1520385624319734186}
   - component: {fileID: 5187320891484226824}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +824,7 @@ GameObject:
   - component: {fileID: 5135958124300681596}
   - component: {fileID: 6983989105632949685}
   - component: {fileID: 5761194118610376101}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5034803120396152793}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -969,7 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7059326634448945931}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheel colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 7623228326914535022}
   - component: {fileID: 3884067145472475144}
   - component: {fileID: 8416712949661523499}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheelbrake_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 1351888300360549507}
   - component: {fileID: 5883138138787939122}
   - component: {fileID: 7579541283378727299}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36793247495082381}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wheel meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 8042661211719853284}
   - component: {fileID: 1854424200307492470}
   - component: {fileID: 6482125285014825791}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 8947820823849867635}
   - component: {fileID: 4273251774617736792}
   - component: {fileID: 2686743839953301213}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1312,7 +1312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8460736257990861359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 5702063305226315942}
   - component: {fileID: 6340376211755649192}
   - component: {fileID: 1783619190526043815}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lagoon_wheelbrake_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

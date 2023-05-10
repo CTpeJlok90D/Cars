@@ -1245,6 +1245,9 @@ MonoBehaviour:
   _delayRangeMaxValue: 1
   _startDelay: 1.5
   _matchSceneNumber: 2
+  _weakCar: {fileID: 11400000, guid: 6eef250cc3f017c4fb29b1dacacdf417, type: 2}
+  _winRequestWinCar: 2
+  _winRequestStrongCar: 25
 --- !u!1 &1191053627
 GameObject:
   m_ObjectHideFlags: 0

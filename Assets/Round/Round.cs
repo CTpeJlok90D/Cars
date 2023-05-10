@@ -15,6 +15,8 @@ public class Round : MonoBehaviour
 	[SerializeField] private GameObject _inGameCanvas;
 	[SerializeField] private Ball _ball;
 	[SerializeField] private ÑountdownTimer _timer;
+	[SerializeField] private GameObject _goalText;
+	[SerializeField] private AudioSource _goualSource;
 	[Header("Coints reward")]
 	[SerializeField] private int _winCoinReward = 500;
 	[SerializeField] private int _coinRewardPerGoal = 50;
@@ -121,6 +123,7 @@ public class Round : MonoBehaviour
 		int coinReward = _winCoinReward + _coinRewardPerGoal * _teams[0].Current;
 		int raitingReward = UnityEngine.Random.Range(_winMinRaitingReward, _winMaxRaitingReward + 1);
 
+		PlayerData.WinCount++;
 		PlayerData.Coins.Value += coinReward;
 		PlayerData.Raiting.Value += raitingReward;
 		_resultWindow.ShowResults(Result.Win, coinReward, raitingReward);
@@ -143,6 +146,8 @@ public class Round : MonoBehaviour
 
 	private IEnumerator AfterGoalCoroutine()
 	{
+		_goualSource.Play();
+		_goalText.SetActive(true);
 		_ball.enabled = false;
 		_timeIsTicking = false;
 
@@ -157,6 +162,7 @@ public class Round : MonoBehaviour
 
 		_ball.enabled = true;
 		_timeIsTicking = true;
+		_goalText.SetActive(false);
 		RestartRound();
 	}
 
@@ -196,6 +202,8 @@ public class Round : MonoBehaviour
 			info.Object.rotation = info.Rotation;
 			if (info.Rigidbody != null)
 			{
+				info.Rigidbody.position = info.Position;
+				info.Rigidbody.rotation = info.Rotation.normalized;
 				info.Rigidbody.velocity = Vector3.zero;
 				info.Rigidbody.angularVelocity = Vector3.zero;
 			}
