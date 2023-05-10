@@ -4,6 +4,7 @@ public class Gates : MonoBehaviour
 {
 	[SerializeField] private TriggerEvents _trigger;
 	[SerializeField] private TeamScore _score;
+	[SerializeField] private ParticleSystem _particleSystem;
 
 	private void OnEnable()
 	{
@@ -15,6 +16,8 @@ public class Gates : MonoBehaviour
 		if (other.TryGetComponent(out Ball ball) && ball.isActiveAndEnabled)
 		{
 			_score.Current++;
+			_particleSystem.transform.position = ball.transform.position;
+			_particleSystem.Play();
 		}
 	}
 }
